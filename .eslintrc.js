@@ -4,15 +4,15 @@ module.exports = {
     es2021: true
   },
   extends: [
-    'standard'
+    'standard',
+    'prettier'
   ],
+  plugins: ['prettier'],
   parserOptions: {
     ecmaVersion: 12
   },
-  plugins: [
-    'vue'
-  ],
   rules: {
+    'prettier/prettier': 'error',
     'no-console': 'off',
     'func-names': 'off'
   }
