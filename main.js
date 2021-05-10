@@ -16,10 +16,10 @@ function render (params) {
     template += `
     <tr>
         <td>${item.name}</td>
-        <td>${item.origin_price}</td>
+        <td>${item.originPrice}</td>
         <td>${item.price}</td>
         <td>
-            <div class="form-check form-switch">
+            <div class="form-check form-switch d-flex align-items-center">
                 <input class="form-check-input active" type="checkbox" id="switchCheck" ${
                   item.isEnabled ? 'checked' : ''
                 } data-id="${key}">
@@ -28,7 +28,7 @@ function render (params) {
                 }</label>
             </div>
         </td>
-        <td><button type="button" id="removeProduct" class="btn btn-sm btn-danger remove" data-id="${key}">刪除</button></td>
+        <td><button type="button" id="removeProduct" class="btn remove" data-id="${key}">刪除</button></td>
     </tr>`
   })
   productTable.innerHTML = template
