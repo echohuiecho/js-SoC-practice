@@ -22,13 +22,13 @@ function render (params) {
             <div class="form-check form-switch d-flex align-items-center">
                 <input class="form-check-input active" type="checkbox" id="switchCheck" ${
                   item.isEnabled ? 'checked' : ''
-                } data-id="${key}">
+                } data-id="${item.key}">
                 <label class="form-check-label" for="switchCheck"> ${
                   item.isEnabled ? '啟用' : '未啟用'
                 }</label>
             </div>
         </td>
-        <td><button type="button" id="removeProduct" class="btn remove" data-id="${key}">刪除</button></td>
+        <td><button type="button" id="removeProduct" class="btn remove" data-id="${item.key}">刪除</button></td>
     </tr>`
   })
   productTable.innerHTML = template
@@ -47,7 +47,7 @@ function render (params) {
 }
 
 function validateForm (name, originPrice, price) {
-  if (name === '' || originPrice === '' || price === '') {
+  if (name === '' || isNaN(originPrice) || isNaN(price)) {
     alert('資料不能留空')
     return false
   } else {
