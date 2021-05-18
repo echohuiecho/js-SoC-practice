@@ -87,8 +87,6 @@ function activateProduct (evt) {
 // 刪除資料
 function removeProduct (evt) {
   const key = evt.target.dataset.id;
-  console.log(key);
-  console.dir(evt.target);
   productData.splice(key, 1);
   render();
 }
